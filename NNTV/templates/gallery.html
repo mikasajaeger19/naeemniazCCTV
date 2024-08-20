@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Date and Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .gallery-item {
+            margin: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+        .gallery-item .info {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Naeem Niaz CCTV</h1>
+    <div class="gallery">
+        {% for image in images %}
+        <div class="gallery-item">
+            <img src="{{ image.src }}" alt="Image">
+            <div class="info">
+                <p>{{ image.datetime }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
